@@ -21,7 +21,7 @@ export const textMessageController = async (req, res) => {
         chat.messages.push({role: "user", content: prompt, timestamp: Date.now(), isImage: false})
 
         const { choices } = await openai.chat.completions.create({
-        "llama-3.1-8b-instant",
+        model: "llama-3.1-8b-instant",
         messages: [
             {
                 role: "user",
